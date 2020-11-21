@@ -1,6 +1,11 @@
+!pip install konlpy
+
+#################################
+
 import re
 from collections import Counter
 from google.colab import files
+from konlpy.tag import Twitter 
 
 # myfile = files.upload()
  
@@ -26,6 +31,9 @@ with open(r'/content/파일 이름.txt', 'r', encoding='utf-8') as f:
               if wanted_items2:
                 print(wanted_items2.group())
                 print(m)
+                nlpy = Twitter() 
+                nouns = nlpy.nouns(m)
+                print(nouns)
               # words.extend(wanted_items.group())
  
 # for word, freq in Counter(words).most_common(10):
