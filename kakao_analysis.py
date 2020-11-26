@@ -1,8 +1,6 @@
 !pip install konlpy
 
-#################################
-
-# Most Frequently Used Words
+###############################
  
 import re
 from collections import Counter
