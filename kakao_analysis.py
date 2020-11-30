@@ -11,7 +11,7 @@ from konlpy.tag import Twitter
  
 words = []
 
-with open(r'/content/카카오톡 .txt', 'r', encoding='utf-8') as f:
+with open(r'/content/카카오톡 chat file .txt', 'r', encoding='utf-8') as f:
     for line in f:
         # m = re.search(r"^.*?\[\d\d:\d\d\]\s*(.+)$", line)
         # print(m)
