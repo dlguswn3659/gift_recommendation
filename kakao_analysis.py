@@ -88,4 +88,4 @@ with urlopen(url) as response:
   for i in range(0, 5):
     print(item_name[i])
     print(item_price[i])
-    print("=======================") 
+    print("======================") 
