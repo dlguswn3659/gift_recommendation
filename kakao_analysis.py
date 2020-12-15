@@ -42,7 +42,7 @@ with open(r'/content/카카오톡chat file .txt', 'r', encoding='utf-8') as f:
 # for word, freq in Counter(words).most_common(10):
 #     print("{0:10s} : {1:3d}".format(word, freq))
 
-test = "방탄소년단 개좋아함"
+test = "김선호 연극 보러가고 싶다"
 nlpy = Twitter()
 nouns = nlpy.nouns(test)
 print(nouns)
