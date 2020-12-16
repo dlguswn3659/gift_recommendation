@@ -26,7 +26,7 @@ with open(r'/content/카카오톡chat file .txt', 'r', encoding='utf-8') as f:
             wanted_items = re.search('갖고 싶|갖고싶|사고 싶|사고싶|싶다|싶어|싶은|싶고', line)
             if wanted_items:
               # words.extend(m.split())
-              wanted_items2 = re.search('갖고 싶|갖고싶|사고 싶|사고싶|싶다|싶어|싶은|싶고', m)
+              wanted_items2 = re.search('갖고 싶|갖고싶|사고 싶|사고싶|싶다|싶어|싶은|싶고', m) 
 
               if wanted_items2:
                 nlpy = Twitter() 
