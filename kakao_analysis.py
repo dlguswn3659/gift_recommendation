@@ -7,12 +7,19 @@ from collections import Counter
 from google.colab import files
 from konlpy.tag import Twitter 
 
-# myfile = files.upload()
- 
+myfile = files.upload()
+print(myfile)
+
+# my_zip = zipfile.ZipFile("/content/MuSE 18 전전 윤종원님과 카카오톡 대화.zip", 'w')  # zip파일 쓰기모드
+zipfile.ZipFile('ㅇㅇㅇ님과 카카오톡 대화.zip').extractall()
+
 words = []
 
-with open(r'/content/카카오톡chat file .txt', 'r', encoding='utf-8') as f:
+with open(r'/content/Talk_2020.12.17 21:28-1.txt', 'r', encoding='utf-8') as f:
     for line in f:
+        # m = re.search(r"^.*?\[\d\d:\d\d\]\s*(.+)$", line) -> pc버전 내보내기
+        # print(m)
+        m = re.search(r"^.*?\[\d\d:\d\d\]\s*(.+)$", line)
         # m = re.search(r"^.*?\[\d\d:\d\d\]\s*(.+)$", line)
         # print(m)
         matchOB = re.match("^\[(.+\]?)\[\w+.\d\d:\d\d\]" , line)
