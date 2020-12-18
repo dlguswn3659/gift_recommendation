@@ -204,7 +204,17 @@ def frequency_sort(data):
 
 ######################################################################################################################
 
+frequency_gift_list = frequency_sort(GiftList)
+print(frequency_gift_list)
 
+CleanGiftList = []
+
+for name in frequency_gift_list:         # 1st loop
+  if name not in CleanGiftList:   # 2nd loop
+    CleanGiftList.append(name)
+
+# CleanGiftList = list(set(frequency_gift_list))
+print(CleanGiftList)
 
 ######################################################################################################################
 
