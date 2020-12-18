@@ -224,38 +224,51 @@ import re
 import codecs
 import binascii
 
-item = u"선바"
-print(item)
-encode_item = item.encode('utf-8')
-item = str(encode_item)
-print(item)
-item = re.sub('[^A-Za-z0-9]+x',"%",item)
-item = item.strip("b")
-item = item.strip("'")
-print(item)
 
-item_name = []
-item_price = []
-item_link = []
+for gift_item in CleanGiftList:
+  print("☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★☆★")
+  # item = u"선바"
+  item = gift_item
+  print(item)
+  encode_item = item.encode('utf-8')
+  item = str(encode_item)
+  print(item)
+  item = re.sub('[^A-Za-z0-9]+x',"%",item)
+  item = item.strip("b")
+  item = item.strip("'")
+  print(item)
 
-url = 'https://search.shopping.naver.com/search/all.nhn?query='+item+'&cat_id=&frm=NVSHATC'
+  item_name = []
+  item_price = []
+  item_link = []
 
-with urlopen(url) as response:
-  soup = BeautifulSoup(response, 'html.parser')
-  print(url)
-  i = 1
-  j = 1
-  for anchor in soup.select("div.basicList_title__3P9Q7"):
-    item_name.append("상품명   : " + anchor.get_text())
-    i = i + 1
-  for anchor in soup.select("span.price_num__2WUXn"):
-    item_price.append("가격   : " + anchor.get_text())
-    j = j + 1
-  
-  for i in range(0, 5):
-    print(item_name[i])
-    print(item_price[i])
-    print("======================") 
+  url = 'https://search.shopping.naver.com/search/all.nhn?query='+item+'&cat_id=&frm=NVSHATC'
+
+  with urlopen(url) as response:
+    soup = BeautifulSoup(response, 'html.parser')
+    print(url)
+    i = 1
+    j = 1
+    for anchor in soup.select("div.basicList_title__3P9Q7"):
+      item_name.append("상품명   : " + anchor.get_text())
+      i = i + 1
+    for anchor in soup.select("span.price_num__2WUXn"):
+      item_price.append("가격   : " + anchor.get_text())
+      j = j + 1
     
+    if item_name:
+      if len(item_name) > 4:
+        for i in range(0, 5):
+          print(item_name[i])
+          print(item_price[i])
+          print("=======================")
+      else:
+        for i in range(0, len(item_name)):
+          print(item_name[i])
+          print(item_price[i])
+          print("=======================")
+
+    else: 
+      print("관련 상품이 없습니다.")
     
 ######################################################################################################################
