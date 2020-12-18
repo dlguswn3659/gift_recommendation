@@ -1,3 +1,10 @@
+!sudo apt-get install -y fonts-nanum
+!sudo fc-cache -fv
+!rm ~/.cache/matplotlib -rf
+
+# 한글 깨짐 해결을 위한 폰트 설치
+###############################
+
 !pip install konlpy
 
 ###############################
