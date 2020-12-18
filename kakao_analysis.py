@@ -168,6 +168,31 @@ k_lotto.plot(figsize=(10,15),kind='barh',grid=True, title='What gift do I want?'
 
 ######################################################################################################################
 
+import requests
+from bs4 import BeautifulSoup
+
+item = "스마트폰"
+
+url = 'https://search.shopping.naver.com/search/all.nhn?query='+item+'&cat_id=&frm=NVSHATC'
+res = requests.get(url)
+text = res.text
+print(text)
+
+soup = BeautifulSoup(text, 'html.parser')
+
+for li in soup.select('#_search_list > div.search_list.basis > ul > li'):
+      name = li.select_one('a.link').text
+      image_url = li.select_one('img._productLazyImg').text
+      url = li.select_one('a.link')['href']
+      if li.select_one('span.num._price_reload'):
+          price = li.select_one('span.num._price_reload').text
+      else:
+          price = li.select_one('span.num').text
+      jjim = li.select_one('em._keepCount').text
+
+      print(name, image_url, url, price, jjim)
+      
+######################################################################################################################
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
