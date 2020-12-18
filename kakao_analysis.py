@@ -272,3 +272,11 @@ for gift_item in CleanGiftList:
       print("관련 상품이 없습니다.")
     
 ######################################################################################################################
+abc_list = ['가', '나', '다', '라', '마', '바',  '사', '아', '자', '차','카','타', '파', '하']
+print(abc_list)
+remove_list = ['가', '나', '마']
+
+for rm_ele in remove_list:
+  abc_list.remove(rm_ele)
+
+print(abc_list)
