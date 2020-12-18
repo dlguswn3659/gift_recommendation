@@ -194,6 +194,20 @@ for li in soup.select('#_search_list > div.search_list.basis > ul > li'):
       
 ######################################################################################################################
 
+def frequency_sort(data):
+	rt_data = []
+	for d, c in Counter(data).most_common():
+		for i in range(c):
+			rt_data.append(d)
+	return rt_data
+
+
+######################################################################################################################
+
+
+
+######################################################################################################################
+
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import re
@@ -232,3 +246,6 @@ with urlopen(url) as response:
     print(item_name[i])
     print(item_price[i])
     print("======================") 
+    
+    
+######################################################################################################################
