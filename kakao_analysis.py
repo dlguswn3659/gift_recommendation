@@ -156,6 +156,17 @@ print(cnt)
 
 ######################################################################################################################
 
+from matplotlib import pyplot as plt #시각화 모듈 작동
+import pandas as pd # 통계,분석등을 위한 pandas의 모듈을 불러옵니다.
+
+plt.rc('font', family='NanumBarunGothic') 
+
+data = pd.Series(cnt) # pandas의 Series를 사용해 인덱스와 값을 자동으로 만들어줍니다.
+k_lotto=data.sort_index() # 보기좋게 인덱스를 정렬합니다.
+k_lotto.plot(figsize=(10,15),kind='barh',grid=True, title='What gift do I want?')
+
+######################################################################################################################
+
 
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
