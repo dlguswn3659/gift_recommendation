@@ -20,7 +20,7 @@ from google.colab import files
 from konlpy.tag import Twitter 
 
 # myfile = files.upload()
-# print("========================")
+# print("=========================")
 
 zip_file_name = ""
 
