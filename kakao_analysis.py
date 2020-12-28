@@ -131,7 +131,7 @@ for txt_files in context_files:
 # for word, freq in Counter(words).most_common(10):
 #     print("{0:10s} : {1:3d}".format(word, freq))
 
-test = "방탄소년단 개좋아함"
+test = "플스 사고 싶은데 물량없음"
 nlpy = Twitter()
 nouns = nlpy.nouns(test)
 print(nouns)
